@@ -10,20 +10,20 @@ iTunseAPI を使った投稿型 SNS サービス
 
 ### basic
 
-- https://la-musicsns-basic.herokuapp.com/
+- https://lfs5-kadai.herokuapp.com/
 - iTunseAPI を使ってユーザーに紐づいた投稿ができる（1:n, 外部 API）
 - 最低限クリアしてほしいレベルです。期日中に絶対終わらせてきてください。
 
 ### standard
 
-- https://la-musicsns-standard.herokuapp.com/
+- （URL 工事中）
 - いいね機能（n:n）
 - スクールメンターとして多対多は理解してほしいので、期日までに終わらなくても、研修が終わるまでには絶対に終わらせてほしいレベル感
 - ただ、ショッピングで多対多を学ぶのはかなり難しいので、この課題のいいね機能を使って多対多を理解しよう
 
 ### advanced
 
-- https://la-musicsns-advanced.herokuapp.com/
+- https://lfs6-model-test.herokuapp.com/
 - フォロー機能（n:n）
 - Twitter 認証（できる人のみ）
 

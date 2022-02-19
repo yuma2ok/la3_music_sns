@@ -58,9 +58,17 @@
     align-items: center;
   }
 
-  .center-hrizontal {
+  .center-horizontal {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   }
+  
+  .user-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  

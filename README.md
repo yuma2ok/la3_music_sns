@@ -4,6 +4,11 @@
 
 iTunseAPI を使った投稿型 SNS サービス
 
+## レギュレーション
+
+- basic, standard, advancedの順で、できるだけ進めてください。
+- このレポジトリを fork して clone し，実装を進めて commit & push してください。
+
 ## 出題形式
 
 難易度を basic / standard / advanced の 3 つの段階に分けて出題します

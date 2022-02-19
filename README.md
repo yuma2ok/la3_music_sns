@@ -2,7 +2,7 @@
 
 ## お題: MUSIC SNS!!
 
-iTunseAPI を使った投稿型 SNS サービス
+iTunse API を使った投稿型 SNS サービス
 
 ## レギュレーション
 
@@ -15,20 +15,20 @@ iTunseAPI を使った投稿型 SNS サービス
 
 ### basic
 
-- https://lfs5-kadai.herokuapp.com/
+- https://lit-music-sns-basic.herokuapp.com/
 - iTunseAPI を使ってユーザーに紐づいた投稿ができる（1:n, 外部 API）
 - 最低限クリアしてほしいレベルです。期日中に絶対終わらせてきてください。
 
 ### standard
 
-- （URL 工事中）
+- https://lit-music-sns-standard.herokuapp.com/
 - いいね機能（n:n）
 - スクールメンターとして多対多は理解してほしいので、期日までに終わらなくても、研修が終わるまでには絶対に終わらせてほしいレベル感
 - ただ、ショッピングで多対多を学ぶのはかなり難しいので、この課題のいいね機能を使って多対多を理解しよう
 
 ### advanced
 
-- https://lfs6-model-test.herokuapp.com/
+- https://lit-music-sns-advanced.herokuapp.com/
 - フォロー機能（n:n）
 - Twitter 認証（できる人のみ）
 

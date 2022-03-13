@@ -1,6 +1,8 @@
 require 'bundler/setup'
 Bundler.require
 
-class User < ActiveRecord::Base.establish_connection
-    
+ActiveRecord::Base.establish_connection
+
+class User < ActiveRecord::Base
+    has_secure_password
 end

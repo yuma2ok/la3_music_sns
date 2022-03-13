@@ -1,7 +1,12 @@
 <section class="first-view center-vertical">
 	<h1>MUSIC SNS!!!</h1>
-	<div class="login_button">
-	</div>
+	<% unless session[:user] %>
+		<form action="/signin" method="post">
+	    	<input name="name" placeholder="ユーザー名" required><br>
+	   		<input type="password" name="password" placeholder="パスワード" required><br>
+	    	<input type="submit" value="ログイン">
+		</form>
+	<% end %>
 </section>
 
 <section class="center-vertical">

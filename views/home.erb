@@ -1,6 +1,20 @@
 <section class="center-vertical">
 	<h1><%= current_user.name %>の投稿</h1>
-	<p>投稿がありません</p>
+	<% if current_user.posts %>
+		<% current_user.posts.each do |post| %>
+			<div class="post center-vertical">
+				<img src=<%= post.music_img %> width="125" height="125">
+				<p>アーティスト： <%= post.artist_name %></p>
+				<p>アルバム： <%= post.album_name %></p>
+				<p>曲名： <%= post.music_name %></p>
+				<p><a href="<%= post.music_sample %>">サンプル</a></p>
+				<p>コメント： <%= post.comment%></p>
+				<p>投稿者： <%= current_user.name %></p>
+			</div>
+		<% end %>
+	<% else %>
+		<p>投稿がありません</p>
+	<% end %>
 </section>
 
 <section class="center-vertical">

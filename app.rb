@@ -79,6 +79,18 @@ post '/signup' do
     redirect '/'
 end
 
+post '/post' do
+    current_user.posts.create(
+        music_img: params[:img],
+        artist_name: params[:artist],
+        album_name: params[:album],
+        music_name: params[:music],
+        music_sample: params[:sample],
+        comment: params[:comment]
+        )
+    redirect '/home'
+end
+
 
 get '/signout' do
     session[:user] = nil

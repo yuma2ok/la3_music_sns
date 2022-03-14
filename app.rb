@@ -92,6 +92,14 @@ post '/post' do
     redirect '/home'
 end
 
+get '/post/:id/favorite' do
+    Favorite.create(
+            post_id: params[:id],
+            user_id: current_user.id
+        )
+    redirect '/home'
+end
+
 
 get '/signout' do
     session[:user] = nil

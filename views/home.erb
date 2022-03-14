@@ -10,6 +10,12 @@
 				<p><a href="<%= post.music_sample %>">サンプル</a></p>
 				<p>コメント： <%= post.comment%></p>
 				<p>投稿者： <%= current_user.name %></p>
+				<p>いいねしたユーザー</p>
+				<% post.favorited_users.each do |favorited_user| %>
+					<div class="user-box">
+						<img src="<%= favorited_user.user_img %>" alt="user_image" width="40" height="40">
+					</div>
+				<% end %>
 			</div>
 		<% end %>
 	<% else %>
@@ -18,8 +24,27 @@
 </section>
 
 <section class="center-vertical">
-	<h1><%= current_user.name %>のイイねした投稿</h1>
+	<h1><%= User.find(session[:user]).name %>のイイねした投稿</h1>
+	<% if User.find(session[:user]).favorited_posts.count == 0 %>
 	<p>イイねがありません</p>
+	<% end %>
+	<% current_user.favorited_posts.each do |favorited_post| %>
+		<div class="post center-vertical">
+			<img src=<%= favorited_post.music_img %> width="125" height="125">
+			<p>アーティスト： <%= favorited_post.artist_name %></p>
+			<p>アルバム： <%= favorited_post.album_name %></p>
+			<p>曲名： <%= favorited_post.music_name %></p>
+			<p><a href="<%= favorited_post.music_sample %>">サンプル</a></p>
+			<p>コメント： <%= favorited_post.comment%></p>
+			<p>投稿者： <%= User.find(favorited_post.user_id).name %></p>
+			<p>いいねしたユーザー</p>
+			<% favorited_post.favorited_users.each do |favorited_user| %>
+				<div class="user-box">
+					<img src="<%= favorited_user.user_img %>" alt="user_image" width="40" height="40">
+				</div>
+			<% end %>
+		</div>
+	<% end %>
 </section>
 
 <section class="center-vertical">

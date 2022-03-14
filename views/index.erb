@@ -12,7 +12,7 @@
 <section class="center-vertical">
 	<h1>最新の投稿</h1>
 	
-	<% if @posts %>
+	<% unless @posts.count == 0 %>
 		<% @posts.each do |post| %>
 			<div class="post center-vertical">
 				<img src=<%= post.music_img %> width="125" height="125">
@@ -21,7 +21,12 @@
 				<p>曲名： <%= post.music_name %></p>
 				<p><a href="<%= post.music_sample %>">サンプル</a></p>
 				<p>コメント： <%= post.comment%></p>
-				<p>投稿者： <%= current_user.name %></p>
+				<p>投稿者： <%= User.find(post.user_id).name %></p>
+				<p>いいねしたユーザー</p>
+				
+				<% unless current_user.nil? %>
+					<a href="/post/<%= post.id %>/favorite">いいね</a>
+				<% end %> 
 			</div>
 		<% end %>
 	<% else %>

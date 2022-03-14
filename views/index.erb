@@ -11,24 +11,20 @@
 
 <section class="center-vertical">
 	<h1>最新の投稿</h1>
-
-	<div class="post center-vertical">
-		<img src="" width="125" height="125">
-		<p>アーティスト: 〇〇</p>
-		<p>アルバム: 〇〇</p>
-		<p>曲名: 〇〇</p>
-		<p><a href="#">サンプル</a></p>
-		<p>コメント: 〇〇</p>
-		<p>投稿者: 〇〇</p>
-		<a href="#">フォローする</a>
-		<a href="#">フォロー解除</a>
-		<p>いいねしたユーザー</p>
-		<div class="user-box">
-			<img src="" alt="user_image" width="40" height="40">
-		</div>
-		<a href="#">いいねする</a>
-	</div>
-
-	<%# TODO: ここで分岐 %>
-	<p>投稿がありません</p>
+	
+	<% if @posts %>
+		<% @posts.each do |post| %>
+			<div class="post center-vertical">
+				<img src=<%= post.music_img %> width="125" height="125">
+				<p>アーティスト： <%= post.artist_name %></p>
+				<p>アルバム： <%= post.album_name %></p>
+				<p>曲名： <%= post.music_name %></p>
+				<p><a href="<%= post.music_sample %>">サンプル</a></p>
+				<p>コメント： <%= post.comment%></p>
+				<p>投稿者： <%= current_user.name %></p>
+			</div>
+		<% end %>
+	<% else %>
+		<p>投稿がありません</p>
+	<% end %>
 </section>

@@ -25,6 +25,7 @@ helpers do
 end
 
 get '/' do
+    @posts = Post.all
     erb :index
 end
 

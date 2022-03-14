@@ -5,29 +5,28 @@
 		<input type="submit" value="検索">
 	</form>
 	<h2>検索結果</h2>
-
 		<div class="center-horizontal">
-			<% @music_results.each do |song| %>
-				<div class="post center-vertical">
-					<img src="<%= song["artworkUrl100"]%>" width="125" height="125">
-					<p>アーティスト: <%= song["artistName"] %></p>
-					<p>アルバム: <%= song["collectionName"] %></p>
-					<p>曲名: <%= song["trackName"] %></p>
-					<p><a href="<%= song["previewUrl"] %>">サンプル</a></p>
-					<form action="/post" method="post">
-						<input type="hidden" value="<%= song["artworkUrl100"]%>" name="img">
-						<input type="hidden" value="<%= song["artistName"] %>" name="artist">
-						<input type="hidden" value="<%= song["collectionName"] %>" name="album">
-						<input type="hidden" value="<%= song["trackName"] %>" name="music">
-						<input type="hidden" value="<%= song["previewUrl"] %>" name="sample">
-						<input type="text" name="comment" placeholder="コメント">
-						<input type="submit" value="投稿">
-					</form>
-				</div>
+			<% unless @music_results == [] %>
+				<% @music_results.each do |song| %>
+					<div class="post center-vertical">
+						<img src="<%= song["artworkUrl100"]%>" width="125" height="125">
+						<p>アーティスト: <%= song["artistName"] %></p>
+						<p>アルバム: <%= song["collectionName"] %></p>
+						<p>曲名: <%= song["trackName"] %></p>
+						<p><a href="<%= song["previewUrl"] %>">サンプル</a></p>
+						<form action="/post" method="post">
+							<input type="hidden" value="<%= song["artworkUrl100"]%>" name="img">
+							<input type="hidden" value="<%= song["artistName"] %>" name="artist">
+							<input type="hidden" value="<%= song["collectionName"] %>" name="album">
+							<input type="hidden" value="<%= song["trackName"] %>" name="music">
+							<input type="hidden" value="<%= song["previewUrl"] %>" name="sample">
+							<input type="text" name="comment" placeholder="コメント">
+							<input type="submit" value="投稿">
+						</form>
+					</div>
+				<% end %>
+			<% else %>	
+				<p>検索結果がありません</p>
 			<% end %>
 		</div>
-
-	<%# TODO: 検索結果によって分岐 %>
-	<p>検索結果がありません</p>
-
 </section>

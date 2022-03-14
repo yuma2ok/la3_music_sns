@@ -100,6 +100,12 @@ get '/post/:id/favorite' do
     redirect '/home'
 end
 
+get '/post/:id/delete_favorite' do
+    favorite = current_user.favorites.find_by(post_id: current_user.id)
+    favorite.delete
+    redirect '/'
+end
+
 
 get '/signout' do
     session[:user] = nil
